@@ -1,10 +1,10 @@
 module "az_storage" {
   source               = "./module"
-  resource_group_name  = "example-resource-group"
-  storage_account_name  = "examplestorageaccount"
-  location             = "East US"
-  container_name       = "examplecontainer"
-  container_access_type = "private"
+  resource_group_name  = var.resource_group_name
+  storage_account_name  = var.storage_account_name
+  location             = var.location
+  container_name       = var.container_name
+  container_access_type = var.container_access_type
 }
 
 output "storage_connection_string" {
