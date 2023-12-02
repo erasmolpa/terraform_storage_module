@@ -1,0 +1,28 @@
+name: Terraform Security Scan
+    
+on:
+  push:
+    branches:
+      - '*'
+
+# Only trigger, when the build workflow succeeded
+# SEE https://github.com/bridgecrewio/checkov
+#on:
+#  workflow_run:
+#    workflows: ["Tfsec Checks on Terraform Code"]
+#    types:
+#      - completed     
+#permissions: read-all
+      
+jobs:
+  tfsec-checks:
+      runs-on: ubuntu-latest
+      steps:
+    
+# Checkout Repository
+      - name : Check out Git Repository
+        uses: actions/checkout@v2
+      
+# Tfsec - Security scanner for your Terraform code
+      - name: Run Tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
