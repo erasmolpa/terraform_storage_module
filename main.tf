@@ -6,7 +6,3 @@ module "az_storage" {
   container_name       = var.container_name
   container_access_type = var.container_access_type
 }
-
-output "storage_connection_string" {
-  value = module.az_storage.connection_string
-}
