@@ -5,4 +5,5 @@ module "az_storage" {
   location             = var.location
   container_name       = var.container_name
   container_access_type = var.container_access_type
+  create_service_principal = false 
 }

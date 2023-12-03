@@ -18,3 +18,18 @@ variable "container_access_type" {
   description = "The access type for the storage container"
   default     = "private"
 }
+
+variable "account_tier" {
+  description = "The storage account tier"
+  default     = "Standard"
+}
+
+variable "account_replication_type" {
+  description = "The storage account replication type"
+  default     = "LRS"
+}
+
+variable "create_service_principal" {
+  description = "Whether to create a service principal or not"
+  default     = false
+}
